@@ -1,4 +1,4 @@
-# Active Directory Home Lab
+# Active Directory Homelab
 
 ## Objective
 
@@ -28,7 +28,7 @@
 
 - **Automating user creation in PowerShell is far more efficient** than manually creating accounts in Active Directory Users and Computers.
 
-- **The home lab reinforced how authentication flows in a Windows domain**, particularly the role of the domain controller in verifying credentials.
+- **The homelab reinforced how authentication flows in a Windows domain**, particularly the role of the domain controller in verifying credentials.
 
 - **Hands-on practice highlighted how AD environments are structured in real organizations**, making enterprise security concepts easier to understand.
 
@@ -38,7 +38,7 @@
 
 <img width="753" height="573" alt="0" src="https://github.com/user-attachments/assets/918f9261-b607-4d85-8e4c-76f633bf0a65" />
 
-Created an Active Directory Diagram in Microsoft Visio to help visualize this home lab. 
+Created an Active Directory Diagram in Microsoft Visio to help visualize this homelab. 
 
 The Windows Server 2019 VM functions as the Domain Controller (DC) for the internal network, providing centralized authentication, identity management, and network services. Both the Domain Controller and the Windows 10 VM / Client reside on the same virtual internal network.
 
@@ -60,7 +60,7 @@ The Domain Controller also handles user and computer account creation, managemen
 
 Configuring RRAS on a Domain Controller to route internal network traffic to the Internet is not recommended in real-world or production environments. Domain Controllers are security-critical systems, and exposing them to routing functions increases the attack surface, complicates hardening, and violates best-practice network design. Ideally, a dedicated router/firewall VM would act as the gateway for the Windows 10 Client VM to access the Internet.
 
-However, because our home lab setup looks like this:
+However, because our homelab setup looks like this:
 
 Internet
      -->
@@ -78,7 +78,7 @@ And because I did not configure port forwarding:
 - Outbound traffic from our Windows Server 2019 VM / Domain Controller and Windows 10 VM / Client is allowed.
 - Only inbound **response** traffic (for requests the Windows Server 2019 VM / Domain Controller and Windows 10 VM / Client initiated) is allowed.
 
-Thus, for the purposes of this home lab demonstration, this setup is acceptable. The goal here is strictly to showcase and develop a strong foundational understanding of the objectives stated at the top of this README.md.
+Thus, for the purposes of this homelab demonstration, this setup is acceptable. The goal here is strictly to showcase and develop a strong foundational understanding of the objectives stated at the top of this README.md.
 ***
 
 **1. Oracle VirtualBox: Windows Server 2019 VM Configuration**
@@ -122,7 +122,7 @@ I logged back in as the newly installed Domain Controller administrator account 
 <img width="876" height="619" alt="5 1" src="https://github.com/user-attachments/assets/6cbe621e-9e87-44bc-8b70-622260b99533" />
 <img width="884" height="675" alt="5 2" src="https://github.com/user-attachments/assets/1de10d0b-eb29-4aca-a58b-e657d67b0515" />
 
-**(_ADMINS and _USERS are already there due to me completing the home lab beforehand)**
+**(_ADMINS and _USERS are already there due to me completing the homelab beforehand)**
 
 ***
 
@@ -204,7 +204,7 @@ creates a new AD user with:
 
 - Username / DisplayName / EmployeeID: set to the generated username.
 
-- Password never expires: useful for a home lab.
+- Password never expires: useful for a homelab.
 
 - Path: places the account in the _USERS OU. The ADSI call ensures the script dynamically detects the domain’s distinguished name (DN), no matter what domain is used (e.g., dc=homelab,dc=local).
 
@@ -215,7 +215,7 @@ creates a new AD user with:
 <img width="904" height="634" alt="8 7" src="https://github.com/user-attachments/assets/3c93a5ff-b9c3-4952-a60d-eb5d827d1036" />
 <img width="905" height="634" alt="8 8" src="https://github.com/user-attachments/assets/b54ffc17-5f32-4875-81d9-69d0baeef6cf" />
 
-**(Red text indicating ResourceExists is there due to me completing the home lab beforehand)**
+**(Red text indicating ResourceExists is there due to me completing the homelab beforehand)**
 
 ***
 
