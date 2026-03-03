@@ -1,4 +1,4 @@
-# Metasploit Home Lab
+# Metasploit Homelab
 
 ## Objective
 
@@ -97,7 +97,7 @@ Entered `python3 -m http.server 9999` in a separate command terminal to create a
 
 **4. Windows 10 VM / Victim: Malware Execution Simulation**
 
-I disabled Windows Defender's Real-Time protection to be able to download the Trojan file for home lab demonstration.
+I disabled Windows Defender's Real-Time protection to be able to download the Trojan file for homelab demonstration.
 
 Downloaded and executed the Trojan file (In a real-world scenario, malware distribution is far less obvious. This simplified version is only for controlled lab testing.).
 
@@ -135,7 +135,7 @@ Entered `net localgroup` to list the Windows 10 VM / Victim's local security gro
 
 Entered `ipconfig` to list the Windows 10 VM / Victim's network adapter information.
 
-With the reverse shell established, we successfully demonstrated a red-team style post-exploitation scenario over port 3389 (RDP). At this point the attacker could perform additional actions such as privilege escalation, credential harvesting, lateral movement, or establish persistence. Through this home lab we have illustrated the risks of unmanaged malware execution in a simulated environment.
+With the reverse shell established, we successfully demonstrated a red-team style post-exploitation scenario over port 3389 (RDP). At this point the attacker could perform additional actions such as privilege escalation, credential harvesting, lateral movement, or establish persistence. Through this homelab we have illustrated the risks of unmanaged malware execution in a simulated environment.
 
 <img width="1275" height="798" alt="6" src="https://github.com/user-attachments/assets/e66c77f1-baa9-43c2-97c9-20471f6ae169" />
 <img width="1278" height="798" alt="6 1" src="https://github.com/user-attachments/assets/3f524e54-167a-4d35-9201-c62a62d48aa6" />
