@@ -1,6 +1,6 @@
-# Home Labs
+# Homelabs
 
-Welcome to my Home Labs repository where I document completed and ongoing home labs to strengthen my technical skills through hands-on experience.
+Welcome to my Homelabs Repository where I document completed and ongoing homelabs to strengthen my technical skills through hands-on experience.
 
 ## Purpose
 
@@ -43,7 +43,7 @@ Some tools I will be using and documenting in my labs include:
 
 ## Connect with Me
 
-If you're also building home labs or studying cybersecurity, feel free to connect and collaborate!
+If you're also building homelabs or studying cybersecurity, feel free to connect and collaborate!
 
 <a href="https://www.linkedin.com/in/erikborahuynh"><img src="https://img.shields.io/badge/-LinkedIn-0072b1?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="https://github.com/ErikBoraHuynh"><img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
