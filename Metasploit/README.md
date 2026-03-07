@@ -53,7 +53,7 @@ I created an inbound rule opening port 3389 within my internal network in order 
 
 **2. Kali Linux VM / Attacker: Conduct Reconnaissance on the Victim Machine and Prepare Payload**
 
-I opened Command Prompt to scan the victim machine's ports and download my payload from Metapsloit's msfvenom tool.
+I opened Command Prompt to scan the victim machine's ports and download my payload from Metasploit's msfvenom tool.
   
 Entered `ifconfig` to check my Kali Linux VM / Attacker's IP address.
   
