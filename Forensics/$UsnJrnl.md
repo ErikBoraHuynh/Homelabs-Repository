@@ -16,7 +16,7 @@
 ### Tools Used
 
 - SANS Investigative Forensics Toolkit (SIFT) Workstation VM
-- 
+- NTFS $UsnJrnl
 
 ***
 
