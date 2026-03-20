@@ -36,6 +36,14 @@ Entered `md5sum evidence.E01` to verify the integrity of our downloaded evidence
 
 Entered `sudo autopsy &` to launch the forensic browser Autospy and load our case.
 
+We then:
+1. **Terminal:** Typed sudo autopsy & and pressed Enter.
+2. **Browser:** Opened Firefox and navigated to the address shown in the terminal (usually http://localhost:9999/autopsy).
+3. **New Case:** Clicked New Case. Named it Lab06_Audit. Clicked New Case.
+4. **Add Host:** Clicked Add Host. Named it Workstation_01. Clicked Add Host.
+5. **Add Image:** Clicked Add Image File. Choose Path: /home/sansforensics/evidencevault/evidence.E01. Choose Type: Disk. Import Method: Symlink.
+6. **The Volume Trap:** Clicked NEXT. When prompted, selected Volume Image and ntfs from the dropdown. Clicked Analyze.
+
 <img width="1920" height="918" alt="USN 2" src="https://github.com/user-attachments/assets/46d51d06-8034-4889-b629-f2187a7bf53b" />
 <img width="1920" height="919" alt="USN 3" src="https://github.com/user-attachments/assets/49b3044c-c641-49e8-ab3c-05c66e6d8fc6" />
 <img width="1920" height="919" alt="USN 4" src="https://github.com/user-attachments/assets/6d290f29-c28d-4b3d-9179-2c60f16e843c" />
@@ -50,20 +58,19 @@ Entered `sudo autopsy &` to launch the forensic browser Autospy and load our cas
 
 **Phase 2: Extracting the $J Stream**
 
-After clicking Analyze, 
+After clicking Analyze, I navigated to the $Extend directory and found $UsnJrnl. I then located the $J attribute (the primary data stream), exported, and saved it as usn_tape.bin on my SANS Workstation VM Desktop.
 
 <img width="1920" height="920" alt="USN 11" src="https://github.com/user-attachments/assets/2ef30093-437a-4d4e-8bf0-8c622e29eac2" />
 <img width="1920" height="919" alt="USN 12" src="https://github.com/user-attachments/assets/e0d62ee3-1f27-4186-a9d4-de5ad1913570" />
 <img width="1920" height="920" alt="USN 13" src="https://github.com/user-attachments/assets/93f13573-b7e5-4045-b46e-7316a83fdb5d" />
-
+<img width="1920" height="920" alt="USN 14" src="https://github.com/user-attachments/assets/3d2f08f7-da62-4b83-982d-cada4ff8abb8" />
 
 ***
 
 **Phase 3: Replaying the Tape**
 
-text
+Entered `usnj.pl -f usn_tape.bin -t > usn_report.txt` to transform the raw, binary file system data into a human-readable format that we can actually analyze. The command runs a Perl script (usnj.pl) commonly found in the SANS SIFT toolkit to parse the usn_tape.bin (Change Journal) we extracted.
 
-<img width="1920" height="920" alt="USN 14" src="https://github.com/user-attachments/assets/3d2f08f7-da62-4b83-982d-cada4ff8abb8" />
 <img width="1920" height="919" alt="USN 15" src="https://github.com/user-attachments/assets/ea93152d-423c-487c-8e01-00f2dbc79d4e" />
 
 
@@ -71,10 +78,14 @@ text
 
 **Phase 4: Connecting the Barcodes**
 
-Here we Ctrl-F to find the "surveil-sourhside06.JPG" file that a suspect claimed they had never seen before. We find it's File Reference Number 6017 and we Ctrl-F it as well to see all it's logs. We find that at it was renamed "billing1.ods" at the Unix Epoch Timestamp of 1665596185. We enter `date -d @1665596185` to get the exact timestamp (UTC) of when it was renamed, which is Wed Oct 12 17:36:25 UTC 2022.
+After opening usn_report.txt, we Ctrl-F to find the "surveil-sourhside06.JPG" file that a suspect claimed they had never seen before. We find it's File Reference Number 6017 and we Ctrl-F it as well to see all it's logs. We find that at it was renamed "billing1.ods" at the Unix Epoch Timestamp of 1665596185. We enter `date -d @1665596185` to get the exact timestamp (UTC) of when it was renamed, which is Wed Oct 12 17:36:25 UTC 2022.
 
 <img width="1920" height="918" alt="USN 16" src="https://github.com/user-attachments/assets/5593f3ee-5360-4fd4-9abb-27ef241a5c0b" />
 <img width="1920" height="920" alt="USN 17" src="https://github.com/user-attachments/assets/f470f520-f900-494b-9502-6622dbd2c9fb" />
 <img width="1920" height="920" alt="USN 18" src="https://github.com/user-attachments/assets/c15105d3-a4dd-4f3a-9848-0ff6641ab7da" />
 
 ***
+
+**Conclusion**
+
+This lab was a pivotal exercise in shifting my perspective from a standard user to a forensic investigator. It successfully demonstrated that while a suspect can easily change a filename to deceive an operating system or a casual observer, the underlying NTFS metadata remains an honest witness. By mastering the use of the $UsnJrnl and File Reference Numbers, I’ve strengthened my ability to reconstruct file lifecycles and bypass intentional anti-forensic techniques.
