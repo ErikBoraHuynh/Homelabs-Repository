@@ -1,8 +1,6 @@
-# Forensics Homelabs
+# Lab 06: Replaying the Security Tape
 
 ## Objective
-
-- 
 
 - 
 
@@ -14,14 +12,10 @@
 
 -
 
--
-
 ### Tools Used
 
 - SANS Investigative Forensics Toolkit (SIFT) Workstation VM
--
--
--
+- 
 
 ***
 
