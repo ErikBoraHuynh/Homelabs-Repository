@@ -16,7 +16,7 @@
 ### Tools Used
 
 - SANS Investigative Forensics Toolkit (SIFT) Workstation VM
-- NTFS $UsnJrnl
+- New Technology File System (NTFS) $UsnJrnl
 
 ***
 
@@ -78,7 +78,7 @@ Entered `usnj.pl -f usn_tape.bin -t > usn_report.txt` to transform the raw, bina
 
 **Phase 4: Connecting the Barcodes**
 
-After opening usn_report.txt, we Ctrl-F to find the "surveil-sourhside06.JPG" file that a suspect claimed they had never seen before. We find it's File Reference Number 6017 and we Ctrl-F it as well to see all it's logs. We find that at it was renamed "billing1.ods" at the Unix Epoch Timestamp of 1665596185. We enter `date -d @1665596185` to get the exact timestamp (UTC) of when it was renamed, which is Wed Oct 12 17:36:25 UTC 2022.
+After opening usn_report.txt, we Ctrl-F to find the "surveil-sourhside06.JPG" file that a suspect claimed they had never seen before. We find it's File Reference Number 6017 and we Ctrl-F it as well to see all it's logs. We find that at the Unix Epoch Timestamp of 1665596185, it was renamed "billing1.ods". We enter `date -d @1665596185` to get the exact timestamp (UTC) of when it was renamed, which is Wed Oct 12 17:36:25 UTC 2022.
 
 <img width="1920" height="918" alt="USN 16" src="https://github.com/user-attachments/assets/5593f3ee-5360-4fd4-9abb-27ef241a5c0b" />
 <img width="1920" height="920" alt="USN 17" src="https://github.com/user-attachments/assets/f470f520-f900-494b-9502-6622dbd2c9fb" />
