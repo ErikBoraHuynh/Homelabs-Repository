@@ -60,17 +60,3 @@ Our goal here is to quickly identify details such as the name of the drive or th
 **Conclusion**
 
 This lab highlighted that the first step in any investigation isn't looking at files, but protecting the data. Proving that the usb.dd.001 image matched the GitHub source hash was an important integrity check. It was also interesting to see how much metadata such as the Volume Label is visible through a simple strings command before even mounting the image. This "look but don't touch" approach is the cornerstone of maintaining evidence integrity.
-
-***
-
-***
-
-# Lab 04: File System Architecture & Mapping
-
-**1. placeholder**
-
-text
-
-img
-
-***
