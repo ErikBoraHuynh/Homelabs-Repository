@@ -1,6 +1,6 @@
 # Metasploit Homelab
 
-## Objective
+### Objective
 
 - **Build a controlled offensive security lab to simulate a complete malware attack chain**, including reconnaissance, payload generation, delivery, execution, and post-exploitation, using Metasploit and a Windows 10 victim machine.
 
@@ -23,7 +23,7 @@
 - Nmap
 - Metasploit
 
-## Findings
+### Findings
 
 - **Endpoint security controls are essential for preventing compromise**, demonstrated when disabling Windows Defender allowed the Trojan executable to run, establish persistence, and create a remote Meterpreter session without any resistance.
 
