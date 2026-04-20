@@ -1,6 +1,6 @@
 # $UsnJrnl: Replaying the Security Tape
 
-## Objective
+### Objective
 
 - Utilize the $UsnJrnl within a SANS SIFT environment to track the lifecycle of a file, identifying that a sensitive image "surveil-sourhside06.JPG" was renamed to a benign spreadsheet called "billing1.ods" to evade detection.
 
