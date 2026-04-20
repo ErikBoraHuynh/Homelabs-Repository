@@ -6,7 +6,6 @@
 
 - Prove file continuity by matching the immutable File Reference Number (File ID), demonstrating how low-level NTFS artifacts serve as a forensic "barcode" that remains unchanged regardless of user-facing filename modifications.
 
-
 ### Skills Learned
 
 - **NTFS Artifact Analysis:** Gained hands-on experience parsing the $UsnJrnl (Change Journal) to track file system modifications and reconstruct the lifecycle of specific files.
@@ -17,6 +16,18 @@
 
 - SANS Investigative Forensics Toolkit (SIFT) Workstation VM
 - New Technology File System (NTFS) $UsnJrnl
+
+### Findings
+
+- **Immutable File Identity:** Confirmed that the File Reference Number (File ID 6017) acts as a permanent "barcode" for data; while the filename was altered to evade detection, the underlying NTFS metadata remained constant, proving file continuity.
+
+- **Anti-Forensic Detection:** Successfully tracked the transition of a sensitive image file (surveil-sourhside06.JPG) being renamed to a benign document (billing1.ods), a common tactic used by bad actors to hide illicit data in plain sight.
+
+- **Temporal Precision:** Leveraged the $UsnJrnl (Change Journal) to pinpoint the exact moment of the filename change at Unix Epoch 1665596185, which correlates to Wed Oct 12 17:36:25 UTC 2022.
+
+- **Artifact Reconstruction:** Demonstrated the ability to transform raw, binary $J stream data into a human-readable chronological report using usnj.pl, effectively "replaying" the file system's history.
+
+- **The "Honest Witness" Principle:** This lab reinforced that user-facing changes (renaming, moving) are superficial; the $UsnJrnl serves as an objective ledger that captures intent and action, making it an essential artifact for incident response and digital forensics.
 
 ***
 
@@ -83,9 +94,3 @@ After opening usn_report.txt, we Ctrl-F to find the "surveil-sourhside06.JPG" fi
 <img width="1920" height="918" alt="USN 16" src="https://github.com/user-attachments/assets/5593f3ee-5360-4fd4-9abb-27ef241a5c0b" />
 <img width="1920" height="920" alt="USN 17" src="https://github.com/user-attachments/assets/f470f520-f900-494b-9502-6622dbd2c9fb" />
 <img width="1920" height="920" alt="USN 18" src="https://github.com/user-attachments/assets/c15105d3-a4dd-4f3a-9848-0ff6641ab7da" />
-
-***
-
-**Conclusion**
-
-This lab was a pivotal exercise in shifting my perspective from a standard user to a forensic investigator. It successfully demonstrated that while a suspect can easily change a filename to deceive an operating system or a casual observer, the underlying NTFS metadata remains an honest witness. By mastering the use of the $UsnJrnl and File Reference Numbers, I’ve strengthened my ability to reconstruct file lifecycles and bypass intentional anti-forensic techniques.
