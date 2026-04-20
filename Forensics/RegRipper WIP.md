@@ -1,6 +1,6 @@
 # RegRipper: The Registry Audit (Win7)
 
-## Objective
+### Objective
 
 - 
 
@@ -15,6 +15,10 @@
 ### Tools Used
 
 - SANS Investigative Forensics Toolkit (SIFT) Workstation VM
+- 
+
+### Findings
+
 - 
 
 ***
