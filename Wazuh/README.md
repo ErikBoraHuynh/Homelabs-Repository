@@ -1,6 +1,6 @@
 # Wazuh Homelab
 
-## Objective
+### Objective
 
 - **Deploy and configure a Wazuh SIEM** on an **Ubuntu VM** to monitor host activity.
   
@@ -24,7 +24,7 @@
 - Windows Host
 - Wazuh
 
-## Findings
+### Findings
 
 - **Agent-to-manager communication was functioning correctly**, as all file events were reflected on the server in real time.
 
