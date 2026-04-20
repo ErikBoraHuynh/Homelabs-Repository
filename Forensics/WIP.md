@@ -63,32 +63,6 @@ This lab highlighted that the first step in any investigation isn't looking at f
 
 ***
 
-# Lab 02: Strategic Acquisition
-
-**1. placeholder**
-
-text
-
-img
-
-***
-
-
-
-***
-
-# Lab 03: The Insider Threat Audit
-
-**1. placeholder**
-
-text
-
-img
-
-***
-
-
-
 ***
 
 # Lab 04: File System Architecture & Mapping
