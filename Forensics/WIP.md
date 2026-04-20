@@ -1,4 +1,4 @@
-# Forensics Homelabs
+# Evidence Intake & Integrity
 
 ## Objective
 
@@ -23,7 +23,7 @@
 -
 -
 
-# Lab 01: Evidence Intake & Integrity
+***
 
 **1. Acquisition of the Evidence**
 
