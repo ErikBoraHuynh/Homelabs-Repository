@@ -1,11 +1,10 @@
 # File System Architecture & Mapping
 
-## Objective
+### Objective
 
 - 
 
 - 
-
 
 ### Skills Learned
 
@@ -18,6 +17,11 @@
 - SANS Investigative Forensics Toolkit (SIFT) Workstation VM
 -
 -
+
+### Findings
+
+- 
+
 
 ***
 
