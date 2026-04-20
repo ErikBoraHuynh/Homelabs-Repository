@@ -1,6 +1,6 @@
 # Active Directory Homelab
 
-## Objective
+### Objective
 
 - **Build a functional, small-scale Active Directory environment** to understand how identity, authentication, and central management operate in an enterprise network.
 
@@ -22,7 +22,7 @@
 - Windows 10 VM
 - Powershell
 
-## Findings
+### Findings
 
 - **Proper DNS configuration is critical** as misconfigured DNS caused login failures and domain join issues until corrected.
 
