@@ -1,27 +1,42 @@
 # Evidence Intake & Integrity
 
-## Objective
+### Objective
 
-- 
-
-- 
-
-- 
+- Perform a forensically sound acquisition and integrity verification of a bit-for-bit disk image using cryptographic hashing and initial metadata triage within a SIFT environment.
 
 ### Skills Learned
 
--
+- **Integrity Verification:** Utilizing cryptographic hashing (MD5) to validate that evidence has not been altered or corrupted during transit or extraction.
 
--
-
--
+- **Data Triage & Metadata Analysis:** Performing "live" analysis on unmounted disk images to extract human-readable strings and volume labels without altering the file system.
 
 ### Tools Used
 
 - SANS Investigative Forensics Toolkit (SIFT) Workstation VM
--
--
--
+
+### Findings
+
+- **Prioritizing Data Preservation:** The foundational step of a digital investigation is the protection of evidence; analysis should only begin once a "frozen" state is established and verified.
+
+- **Cryptographic Verification:** Matching the MD5 hash of usb.dd.001 against the source repository confirmed that the evidence remained mathematically identical throughout the intake process.
+
+- **Non-Invasive Triage:** Utilizing the strings command demonstrated that critical metadata, such as the Volume Label, can be extracted from a raw disk image without the risks associated with mounting the file system.
+
+- **"Look But Don't Touch" Methodology:** This lab reinforced the industry standard of maintaining a strict chain of custody and ensuring that the original evidence is never altered during the forensic workflow.
+
+***
+
+### Understanding Bit-for-Bit Replicas
+
+In digital forensics, a bit-for-bit replica (also known as a physical image) is a sector-by-sector duplication of a storage device. Unlike a standard logical copy, where you simply copy-paste visible files, a bit-for-bit replica captures the entire state of the drive including:
+
+**Unallocated Space:** Areas of the disk where files were deleted but the data remains until overwritten.
+
+**Slack Space:** The unused space at the end of a file cluster that can contain remnants of previous data.
+
+**File System Metadata:** Hidden structures that track file permissions, timestamps, and deleted entries.
+
+By using the .dd format in this lab, I ensured that the evidence was a "frozen" snapshot of the original media, allowing for deep analysis without the risk of altering the source data.
 
 ***
 
@@ -54,9 +69,3 @@ Entered `md5sum usb.dd.001` to calculate the MD5 hash of the disk image to prove
 Our goal here is to quickly identify details such as the name of the drive or the types of files it contains. A Volume Label is the human-readable name of the drive. We can find it in the drive's "Passport" section using the strings command. Entered `strings usb.dd.001 | head -n 20` to display the first 20 human-readable text sequences found within the disk image file.
 
 <img width="1920" height="921" alt="Forensics 4" src="https://github.com/user-attachments/assets/ffbb3cb8-23eb-4fdc-a91c-e1c5689f2173" />
-
-***
-
-**Conclusion**
-
-This lab highlighted that the first step in any investigation isn't looking at files, but protecting the data. Proving that the usb.dd.001 image matched the GitHub source hash was an important integrity check. It was also interesting to see how much metadata such as the Volume Label is visible through a simple strings command before even mounting the image. This "look but don't touch" approach is the cornerstone of maintaining evidence integrity.
