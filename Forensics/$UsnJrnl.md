@@ -2,9 +2,9 @@
 
 ### Objective
 
-- Utilize the $UsnJrnl within a SANS SIFT environment to track the lifecycle of a file, identifying that a sensitive image "surveil-sourhside06.JPG" was renamed to a benign spreadsheet called "billing1.ods" to evade detection.
+- **Utilize the $UsnJrnl within a SANS SIFT environment to track the lifecycle of a file,** identifying that a sensitive image "surveil-sourhside06.JPG" was renamed to a benign spreadsheet called "billing1.ods" to evade detection.
 
-- Prove file continuity by matching the immutable File Reference Number (File ID), demonstrating how low-level NTFS artifacts serve as a forensic "barcode" that remains unchanged regardless of user-facing filename modifications.
+- **Prove file continuity by matching the immutable File Reference Number (File ID),** demonstrating how low-level NTFS artifacts serve as a forensic "barcode" that remains unchanged regardless of user-facing filename modifications.
 
 ### Skills Learned
 
