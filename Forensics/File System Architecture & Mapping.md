@@ -2,7 +2,7 @@
 
 ### Objective
 
-- **To demonstrate the discrepancy between the User View (Active Files) and the Forensic View (Deleted Files)** by utilizing forensic math to manually mount partitions and recover unallocated data that the operating system no longer recognizes.
+- **Demonstrate the discrepancy between the User View (Active Files) and the Forensic View (Deleted Files)** by utilizing forensic math to manually mount partitions and recover unallocated data that the operating system no longer recognizes.
 
 ### Skills Learned
 
