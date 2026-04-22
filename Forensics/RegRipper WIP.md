@@ -91,7 +91,7 @@ Entered `cat ~/Desktop/Lab05_Results/X` and `grep -i "Dug" ~/Desktop/Lab05_Resul
 
 - The SanDisk device’s Serial Number is 0123456789ABCDEF&0 according to the usb_history.txt file.
 
-- URLS that Dug manually typed into Internet Explorer according to the browser_intent.txt file include: http://reddit.com/and http://go.microsoft.com/fwlink/?LinkId=69157
+- URLS that Dug manually typed into Internet Explorer according to the browser_intent.txt file include: http://reddit.com/ and http://go.microsoft.com/fwlink/?LinkId=69157
 
 - Dug opened “best.txt” and “note.txt” according to the file_access.txt file.
 
