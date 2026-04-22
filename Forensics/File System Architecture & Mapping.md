@@ -72,7 +72,7 @@ Entered `fls -r -o 128 /home/sansforensics/Desktop/Forensics/usb_dd/usb.dd.001` 
 
 I extract the deleted file into our workspace and verify its identity as a .doc file after finding it's Magic Number (0xD0CF11E0) in the Hex Header.
 
-Entered `icat -o 128 /home/sansforensics/Desktop/Forensics/usb_dd/usb.dd.001 88 > ~/Desktop/Forensics/Lab04/rescued_file.doc` to extract Inode 88 directly into your Lab04 folder.
+Entered `icat -o 128 /home/sansforensics/Desktop/Forensics/usb_dd/usb.dd.001 88 > ~/Desktop/Forensics/Lab04/rescued_file.doc` to extract Inode 88 directly into my Lab04 folder.
 
 Entered `xxd rescued_file.doc | head -n 1` to view the Hex Header.
 
