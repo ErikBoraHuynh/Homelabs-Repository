@@ -31,7 +31,7 @@
 
 ***
 
-**Phase 0: Environment & Evidence Setup**
+**Phase 1: Environment & Evidence Setup**
 
 Entered `mkdir -p evidencevault && cd evidencevault` to create and enter the vault directory for this home lab.
 
@@ -43,7 +43,7 @@ Entered `md5sum evidence.E01` to verify the integrity of our downloaded evidence
 
 ***
 
-**Phase 1: Autopsy Case Initialization**
+**Phase 2: Autopsy Case Initialization**
 
 Entered `sudo autopsy &` to launch the forensic browser Autospy and load our case.
 
@@ -67,7 +67,7 @@ We then:
 
 ***
 
-**Phase 2: Extracting the $J Stream**
+**Phase 3: Extracting the $J Stream**
 
 After clicking Analyze, I navigated to the $Extend directory and found $UsnJrnl. I then located the $J attribute (the primary data stream), exported, and saved it as usn_tape.bin on my SANS Workstation VM Desktop.
 
@@ -78,7 +78,7 @@ After clicking Analyze, I navigated to the $Extend directory and found $UsnJrnl.
 
 ***
 
-**Phase 3: Replaying the Tape**
+**Phase 4: Replaying the Tape**
 
 Entered `usnj.pl -f usn_tape.bin -t > usn_report.txt` to transform the raw, binary file system data into a human-readable format that we can actually analyze. The command runs a Perl script (usnj.pl) commonly found in the SANS SIFT toolkit to parse the usn_tape.bin (Change Journal) we extracted.
 
@@ -87,7 +87,7 @@ Entered `usnj.pl -f usn_tape.bin -t > usn_report.txt` to transform the raw, bina
 
 ***
 
-**Phase 4: Connecting the Barcodes**
+**Phase 5: Connecting the Barcodes**
 
 After opening usn_report.txt, we Ctrl-F to find the "surveil-sourhside06.JPG" file that a suspect claimed they had never seen before. We find it's File Reference Number 6017 and we Ctrl-F it as well to see all it's logs. We find that at the Unix Epoch Timestamp of 1665596185, it was renamed "billing1.ods". We enter `date -d @1665596185` to get the exact timestamp (UTC) of when it was renamed, which is Wed Oct 12 17:36:25 UTC 2022.
 
