@@ -2,7 +2,7 @@
 
 ### Objective
 
-- Perform a forensically sound acquisition and integrity verification of a bit-for-bit disk image using cryptographic hashing and initial metadata triage within a SIFT environment.
+- **Perform a forensically sound acquisition and integrity verification** of a bit-for-bit disk image using cryptographic hashing and initial metadata triage within a SIFT environment.
 
 ### Skills Learned
 
