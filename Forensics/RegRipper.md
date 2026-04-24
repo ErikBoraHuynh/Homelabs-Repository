@@ -25,7 +25,7 @@
 
 ***
 
-**Phase 0: Environment Setup & Decompression**
+**Phase 1: Environment Setup & Decompression**
 
 The Windows 7 evidence is currently "locked" inside a compressed file. I must extract it into its original folder structure before I can analyze the hives.
 
@@ -39,7 +39,7 @@ Entered `cd Win7_Laptop/ mkdir -p ~/Desktop/Lab05_Results` to enter the new dire
 
 ***
 
-**Phase 1: System-Wide Audit (Machine Info)**
+**Phase 2: System-Wide Audit (Machine Info)**
 
 I'll use rip.pl to pull system data. I'll also use the > symbol to save our results into text files so we can read them easily in the next step.
 
@@ -57,7 +57,7 @@ Entered `rip.pl -r Windows/System32/config/SOFTWARE -p networkcards > ~/Desktop/
 
 ***
 
-**Phase 2: User & Hardware Attribution**
+**Phase 3: User & Hardware Attribution**
 
 We need to map the users on the system and find the unique serial numbers of physical USB devices.
 
@@ -71,7 +71,7 @@ Entered `rip.pl -r Windows/System32/config/SYSTEM -p usbstor > ~/Desktop/Lab05_R
 
 ***
 
-**Phase 3: Behavioral Analysis (Dug's Activities)**
+**Phase 4: Behavioral Analysis (Dug's Activities)**
 
 Now I'll look at the suspect's personal NTUSER.DAT hive found in his user directory.
 
@@ -85,7 +85,7 @@ Entered `rip.pl -r Users/Dug/NTUSER.DAT -p recentdocs > ~/Desktop/Lab05_Results/
 
 ***
 
-**Phase 4: Reading the Evidence**
+**Phase 5: Reading the Evidence**
 
 The Windows 7 computer is Enterprise Service Pack 1 and it was installed in 2016-02-25 14:48:49Z according to the os_info.txt file.
 
