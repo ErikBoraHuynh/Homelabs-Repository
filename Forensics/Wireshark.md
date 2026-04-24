@@ -26,20 +26,6 @@ Subject line the attacker chose was "you can’t find us" and the threat message
 
 ***
 
-**Phase 0: Environment Setup & Acquisition**
-
-I create a surgical vault and download the example evidence needed for this lab.
-
-Entered `mkdir -p ~/Desktop/Lab08_Vault && cd ~/Desktop/Lab08_Vault` to create the lab folder.
-
-Entered `wget https://raw.githubusercontent.com/rajiraman1224/BIT4644-DFIR/main/nitroba.pcap` to download the 60MB Network Capture (PCAP)
-
-Entered `ls -lh nitroba.pcap` `md5sum nitroba.pcap` to verify the file downloaded correctly.
-
-img
-
-***
-
 **Phase 1: Triage (Finding the Transaction)**
 
 I isolate the traffic to the specific "anonymous" website used for the threat.
@@ -48,13 +34,17 @@ Entered `wireshark nitroba.pcap &` to launch the wireshark GUI.
 
 Entered `http.host contains "willselfdestruct"` in the wireshark display filter and looked at the Source IP address of the request.
 
+<img width="1920" height="920" alt="Forensics08 1" src="https://github.com/user-attachments/assets/236e2039-5fdc-4ff7-80dc-dfb0b8289894" />
+
+<img width="1920" height="919" alt="Forensics08 1 1" src="https://github.com/user-attachments/assets/39b6e0a9-3f45-4e62-a6f7-3e2cdcad724e" />
+
 ***
 
 **Phase 2: The "Surgical" Reconstruction**
 
 Now I will reassemble the fragmented packets to see exactly what was typed into the web form. I found the packet with the info: POST /secure/submit HTTP/1.1. then right clicked and selected Follow > TCP Stream. Red text is data sent by the suspect; Blue text is the server's response. We see the the message content and the suspect's target email address.
 
-e
+<img width="1920" height="920" alt="Forensics08 2" src="https://github.com/user-attachments/assets/43c49512-7abc-4847-9e66-5d44153f2050" />
 
 ***
 
@@ -62,6 +52,6 @@ e
 
 We have a computer IP, but Johnny Coach claims someone else used his seat. I need to find a "Digital Leak"—a personal account login from that same IP address during the same session.
 
-Entered `ip.addr == [SUSPECT_IP] and http.cookie` to look for cookies or login strings associated with the suspect's IP address
+Entered `ip.addr == 192.168.15.4 and http.cookie` in the wireshark display filter to look for cookies or login strings associated with the suspect's IP address
 
-e
+<img width="1920" height="920" alt="Forensics08 3" src="https://github.com/user-attachments/assets/4f925a55-e402-4765-8a32-aee6dfcca371" />
